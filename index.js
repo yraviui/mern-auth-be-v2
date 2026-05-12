@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRouter.js';
+import contactRoutes from './routes/contactRoutes.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/contact', contactRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
